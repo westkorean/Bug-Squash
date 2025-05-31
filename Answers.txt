@@ -45,6 +45,13 @@ C++:
 C:
     Simple:
         Q1: 
+            Fix: #include <stdio.h> is required for using printf().
+
+        Q2:
+            Fix: Use == to compare values, not assign.
+
+    Intermediate:
+        Q3:
             Fix: In C, local variables are not initialized automatically. Always initialize them before use.
             #include <stdio.h>
 
@@ -54,38 +61,82 @@ C:
 
                 return 0;
             }
-
-        Q2:
-            Fix:
-
-    Intermediate:
-        Q3:
-            Fix:
         Q4:
-            Fix:
+            Fix: Always allocate enough memory to hold the full string, including the null terminator.
+
+            #include <stdio.h>
+
+            int main(void){
+                char str[50];
+                strcpy(str, "Hello, world!");
+            }
 Java:
     Simple:
         Q1:
-            Fix:
+            Fix: String is a Java class and must begin with a capital S.
 
         Q2:
-            Fix:
+            Fix: The valid indices are 0, 1, and 2.
 
     Intermediate:
         Q3:
-            Fix:
+            Fix: You must initialize the String before calling any methods on it.
+
+            public class Main {
+                public static void main(String[] args) {
+                    String s = "hello";
+                    System.out.println(s.length()); 
+                }
+            }
+
         Q4:
-            Fix:
+            Fix: Use the same method name and case when overriding, and add @Override for safety. This ensures proper runtime polymorphism.
+
+            class Animal {
+                void speak() {
+                    System.out.println("Animal speaks");
+                }
+            }
+
+            class Dog extends Animal {
+                @Override
+                void speak() {
+                    System.out.println("Dog barks");
+                }
+            }
+
 Python:
     Simple:
         Q1:
-            Fix:
+            Fix: The print must be indented inside the function block.
 
         Q2:
-            Fix:
+            Fix: Convert x to an integer before addition.
   
     Intermediate:
         Q3:
-            Fix:
+            Fix: Default to None and create a new list inside the function to avoid shared state between calls.
+
+            def add_item(item, lst=None):
+            if lst is None:
+                lst = []
+            lst.append(item)
+            return lst
+
         Q4:
-            Fix:
+            Fix: Either declare x as global or pass it in as a parameter to avoid scope issues.
+
+            x = 10
+            def func():
+                global x
+                x = x + 5
+                print(x)
+
+            or
+
+            def func(x):
+                x = x + 5
+                print(x)
+
+            func(10)
+
