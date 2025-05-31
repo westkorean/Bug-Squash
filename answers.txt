@@ -46,9 +46,19 @@ C:
     Simple:
         Q1: 
             Fix: #include <stdio.h> is required for using printf().
+            #include <stdio.h>
+            int main() {
+                printf("Hi");
+                return 0;
+            }
 
         Q2:
             Fix: Use == to compare values, not assign.
+            int x = 10;
+            if (x == 5) {
+                printf("True");
+            }
+
 
     Intermediate:
         Q3:
@@ -74,9 +84,21 @@ Java:
     Simple:
         Q1:
             Fix: String is a Java class and must begin with a capital S.
+            public class Main {
+            public static void main(String[] args) {
+                String name = "John";
+            }
+        }
 
         Q2:
             Fix: The valid indices are 0, 1, and 2.
+            public class Main {
+                public static void main(String[] args) {
+                    int[] nums = {1, 2, 3};
+                    System.out.println(nums[2]);    // nums[0] and nums [1] work
+                }
+            }
+
 
     Intermediate:
         Q3:
@@ -109,10 +131,17 @@ Python:
     Simple:
         Q1:
             Fix: The print must be indented inside the function block.
+            def say_hi():
+                print("Hi")
+
 
         Q2:
             Fix: Convert x to an integer before addition.
-  
+            x = "10"
+            y = 5
+            print(int(x) + y)
+
+
     Intermediate:
         Q3:
             Fix: Default to None and create a new list inside the function to avoid shared state between calls.
